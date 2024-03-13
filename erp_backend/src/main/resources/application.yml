@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: erp_backend
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+    database: postgresql
+    show-sql: true
+  datasource:
+    password: password
+    username: application
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:54817
+  devtools:
+    add-properties: true
+    livereload:
+      enabled: true
+debug: false
