@@ -1,6 +1,5 @@
 package erp.app.erp_backend.controller;
 
-import erp.app.erp_backend.dto.CategoryDTO;
 import erp.app.erp_backend.model.Category;
 import erp.app.erp_backend.service.CategoryService;
 import org.springframework.http.ResponseEntity;
