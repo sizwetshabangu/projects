@@ -22,6 +22,12 @@ public class CategoryService {
     public Category postCategory(Category category) {
         return this.categoryRepository.save(category);
     }
+    public Category putCategory(Category category) {
+        return this.categoryRepository.save(category);
+    }
+    public Category patchCategory(Category category) {
+        return this.categoryRepository.save(category);
+    }
     public void deleteCategoryById(Long id) {
         this.categoryRepository.deleteById(id);
     }

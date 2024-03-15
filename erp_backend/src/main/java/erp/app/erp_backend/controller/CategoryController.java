@@ -15,7 +15,7 @@ public class CategoryController {
     public CategoryController(CategoryService categoryService) {
         this.categoryService = categoryService;
     }
-    @GetMapping
+    @GetMapping()
     public ResponseEntity<List<Category>> getCategories() {
         return ResponseEntity.ok(this.categoryService.getCategories());
     }
@@ -23,11 +23,16 @@ public class CategoryController {
     public ResponseEntity<Category> getCategory(@PathVariable Long id) {
         return ResponseEntity.ok(this.categoryService.getCategory(id));
     }
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<Category> postCategory(@RequestBody Category category) {
         return ResponseEntity.ok(this.categoryService.postCategory(category));
     }
-    @DeleteMapping
+    @PatchMapping("/{id}")
+    public ResponseEntity<Category> patchCategory(@RequestBody Category category, @PathVariable Long id) {
+        category.setId(id);
+        return ResponseEntity.ok(this.categoryService.patchCategory(category));
+    }
+    @DeleteMapping()
     public ResponseEntity<Object> deleteCategory(@RequestBody Category category){
         this.categoryService.deleteCategory(category);
         return ResponseEntity.noContent().build();
